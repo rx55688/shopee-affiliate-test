@@ -5,21 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陽光精選好物</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .product-card {
+            @apply bg-white rounded-lg shadow-md overflow-hidden flex flex-col;
+        }
+        .product-image {
+            @apply w-full h-48 object-cover;
+        }
+        .product-info {
+            @apply p-4 flex-grow;
+        }
+        .product-name {
+            @apply font-bold text-lg mb-1 line-clamp-2;
+        }
+        .product-price {
+            @apply text-orange-600 font-bold text-xl;
+        }
+        .original-price {
+            @apply text-gray-400 line-through text-sm ml-2;
+        }
+        .buy-button {
+            @apply mt-4 block w-full bg-orange-500 text-white py-2 rounded-md text-center hover:bg-orange-600 transition-colors;
+        }
+    </style>
 </head>
-<body class="bg-amber-50">
-    <nav class="p-4 bg-white shadow-sm flex justify-between items-center">
-        <h1 class="text-xl font-bold text-orange-500">陽 陽光精選好物</h1>
-        <div class="space-x-4 text-gray-600">
-            <span>首頁</span><span>今日推薦</span><span>關於我們</span>
+<body class="bg-amber-50 font-sans">
+    <nav class="p-4 bg-white shadow-sm flex justify-between items-center fixed top-0 left-0 w-full z-10">
+        <h1 class="text-xl font-bold text-orange-500">陽光精選好物</h1>
+        <div class="space-x-4 text-gray-600 hidden md:flex">
+            <a href="#" class="hover:text-orange-500">首頁</a>
+            <a href="#" class="hover:text-orange-500">今日推薦</a>
+            <a href="#" class="hover:text-orange-500">關於我們</a>
         </div>
+        <button class="md:hidden text-gray-600 text-xl">☰</button>
     </nav>
-    <main class="max-w-4xl mx-auto mt-10 p-4">
-        <h2 class="text-3xl font-bold mb-2">今日推薦</h2>
-        <p class="text-gray-500 mb-6">編輯精選 9 款今日最值得入手的熱門商品</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center text-gray-600">商品圖片預覽 1</div>
-            <div class="bg-gray-300 h-64 rounded-lg flex items-center justify-center text-gray-600">商品圖片預覽 2</div>
+    <main class="max-w-6xl mx-auto pt-24 p-4">
+        <h2 class="text-4xl font-extrabold mb-4 text-gray-800">今日推薦</h2>
+        <p class="text-gray-600 mb-8 text-lg">編輯精選 9 款今日最值得入手的熱門商品，輕鬆發現好物！</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="product-card">
+                <img src="https://picsum.photos/id/203/400/300?random=1" alt="智能手錶" class="product-image">
+                <div class="product-info">
+                    <p class="product-name">最新款智能運動手錶</p>
+                    <p class="product-price">NT$ 599 <span class="original-price">NT$ 990</span></p>
+                    <a href="#" class="buy-button">前往搶購</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/id/204/400/300?random=2" alt="無線藍牙耳機" class="product-image">
+                <div class="product-info">
+                    <p class="product-name">超輕量無線藍牙耳機</p>
+                    <p class="product-price">NT$ 299 <span class="original-price">NT$ 650</span></p>
+                    <a href="#" class="buy-button">前往搶購</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/id/205/400/300?random=3" alt="多功能料理鍋" class="product-image">
+                <div class="product-info">
+                    <p class="product-name">網紅爆款多功能料理鍋</p>
+                    <p class="product-price">NT$ 880 <span class="original-price">NT$ 1299</span></p>
+                    <a href="#" class="buy-button">前往搶購</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/id/206/400/300?random=4" alt="隨身輕巧風扇" class="product-image">
+                <div class="product-info">
+                    <p class="product-name">夏日必備隨身輕巧風扇</p>
+                    <p class="product-price">NT$ 189 <span class="original-price">NT$ 399</span></p>
+                    <a href="#" class="buy-button">前往搶購</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/id/207/400/300?random=5" alt="智能掃地機器人" class="product-image">
+                <div class="product-info">
+                    <p class="product-name">APP連線智能掃地機器人</p>
+                    <p class="product-price">NT$ 1999 <span class="original-price">NT$ 3500</span></p>
+                    <a href="#" class="buy-button">前往搶購</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/id/208/400/300?random=6" alt="質感皮革背包" class="product-image">
+                <div class="product-info">
+                    <p class="product-name">都會型男質感皮革背包</p>
+                    <p class="product-price">NT$ 799 <span class="original-price">NT$ 1500</span></p>
+                    <a href="#" class="buy-button">前往搶購</a>
+                </div>
+            </div>
         </div>
     </main>
+    <footer class="bg-gray-800 text-white text-center p-6 mt-10">
+        <p>&copy; 2026 陽光精選好物. All rights reserved.</p>
+        <p class="text-sm mt-2">本站為 API 串接測試與商品推廣示範用途</p>
+    </footer>
 </body>
 </html>
